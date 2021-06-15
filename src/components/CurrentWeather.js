@@ -4,8 +4,8 @@ import { Paper, Grid, Typography, CircularProgress } from "@material-ui/core";
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    margin: 10,
     backgroundColor: "#b6caf5",
+    borderRadius: 7,
   },
   paper: {
     flex: "1 1 0%",
@@ -31,7 +31,6 @@ const useStyles = makeStyles((theme) => ({
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
-    minHeight: "20vh",
   },
 }));
 const CurrentWeather = ({ weatherData }) => {

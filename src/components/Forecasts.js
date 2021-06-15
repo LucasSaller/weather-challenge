@@ -7,13 +7,12 @@ import { getDailyForecast } from "../utils/weather";
 
 const useStyles = makeStyles((theme) => ({
   paper: {
-    margin: 10,
     textAlign: "center",
     backgroundColor: "#b6caf5",
     borderRadius: "5px",
   },
   cards: {
-    display: "inline-flex",
+    width: "100%",
   },
   h3: {
     opacity: 0.7,
@@ -22,25 +21,23 @@ const useStyles = makeStyles((theme) => ({
 
 const Forecasts = ({ weatherData }) => {
   const classes = useStyles();
-  
+
   if (weatherData == null) {
     return null;
   } else {
     return (
-      <Grid container>
-        <Grid item xs={12} className={classes.paper}>
-          <Paper className={classes.paper} elevation={0}>
-            <h1>Daily Forecast 5 days</h1>
-            <h3 className={classes.h3}>{weatherData?.city?.name}</h3>
-            <div className={classes.cards}>
-              {weatherData &&
-                getDailyForecast(weatherData).list.map((item, index) => (
-                  <Forecast key={index} weatherData={item} />
-                ))}
-            </div>
-          </Paper>
+      <Paper className={classes.paper} elevation={0}>
+        <h1>Daily Forecast 5 days</h1>
+        <h3 className={classes.h3}>{weatherData?.city?.name}</h3>
+        <Grid container justify="center">
+          {weatherData &&
+            getDailyForecast(weatherData).list.map((item, index) => (
+              <Grid item xs={12} lg={2} style={{ minWidth: 150 }}>
+                <Forecast key={index} weatherData={item} />
+              </Grid>
+            ))}
         </Grid>
-      </Grid>
+      </Paper>
     );
   }
 };

@@ -9,7 +9,6 @@ const Container = styled.div`
   color: white;
   overflow: hidden;
   min-height: 100vh;
-  width: 100vw;
 `;
 const animSnowflakes = keyframes`
   from { transform: translateY(-2000px); }

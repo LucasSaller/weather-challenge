@@ -13,14 +13,17 @@ import {
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
+    borderRadius: 10,
     margin: 10,
     backgroundColor: "#b6caf5",
   },
   paper: {
-    flex: "2 1 0%",
     padding: 20,
+    display: "flex",
+    justifyContent: "space-around",
+    flexDirection: "column",
     minWidth: 320,
-    minHeight: 200,
+    minHeight: 213,
     backgroundColor: "#b6caf5",
   },
   form: {
@@ -44,7 +47,7 @@ const CityPicker = ({ setCity, setConsultar }) => {
   };
 
   return (
-    <div className={classes.root}>
+    <div>
       <Paper className={classes.paper} elevation={0}>
         <h1>Weather in your City</h1>
         <FormControl autoComplete="off" className={classes.form}>
